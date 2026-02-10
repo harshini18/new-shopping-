@@ -24,8 +24,7 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public CartItem addToCart(CartItem item) {
-        log.info("Adding item to cart: userId={}, productId={}, quantity={}", 
-                item.getUserId(), item.getProductId(), item.getQuantity());
+        log.info("Adding item to cart: {}", item);
 
         // Validate required fields
         if (item.getUserId() == null || item.getProductId() == null) {

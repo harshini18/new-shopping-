@@ -67,6 +67,10 @@ const UserDashboard = () => {
     };
 
     const handleAddToCart = async (product) => {
+        if (!user || !user.userId) {
+            alert('Please login to add items to cart');
+            return;
+        }
         try {
             // Optimistic feedback could be added here
             await cartAPI.addToCart({
